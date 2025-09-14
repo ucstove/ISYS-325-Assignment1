@@ -3,7 +3,7 @@ namespace Assignment1
     public partial class MainForm : Form
     {
 
-        private const double HOURLY_RATE = 10.5;
+        private const double HOURLY_RATE = 10.50;
         public MainForm()
         {
             InitializeComponent();
@@ -18,7 +18,7 @@ namespace Assignment1
             {
                 hours = int.Parse(txtHours.Text);
                 lblSummary.ForeColor = Color.Black;
-                lblSummary.Text = $"{firstName} {lastName} worked {hours} at ${HOURLY_RATE} for a total of ${hours * HOURLY_RATE}";
+                lblSummary.Text = $"{firstName} {lastName} worked {hours} hours at {HOURLY_RATE:C} an hour for a total of {(hours * HOURLY_RATE):C}";
             }
             catch (FormatException)
             {
@@ -34,7 +34,6 @@ namespace Assignment1
             txtHours.Clear();
             lblSummary.Text = "";
             txtFirstName.Focus();
-            this.Refresh();
         }
 
         private void lblFirstName_Click(object sender, EventArgs e)
